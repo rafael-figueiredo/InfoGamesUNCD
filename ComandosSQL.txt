@@ -1,0 +1,79 @@
+DROP DATABASE IF EXISTS infogamesuncd;
+
+CREATE DATABASE IF NOT EXISTS infogamesuncd;
+
+DROP TABLE IF EXISTS infogamesuncd.DESKTOP;
+CREATE TABLE IF NOT EXISTS infogamesuncd.DESKTOP(
+	id			INT			 NOT NULL AUTO_INCREMENT,
+	cod		        INT			 NOT NULL,
+	modeloGabinete		VARCHAR(20)  		 NOT NULL,
+	placaVideo		VARCHAR(40) 	         NOT NULL,
+	memoriaRam		VARCHAR(40) 		 NOT NULL,
+	processador	        VARCHAR(40)		 NOT NULL,
+	modeloCooler	        VARCHAR(40) 	         NOT NULL,
+	waterCooler 	 	VARCHAR(20)	 	 NOT NULL,
+	modeloHD 	 	VARCHAR(40) 	 	 NOT NULL,
+	tamanhoHD  	 	VARCHAR(10) 	 	 NOT NULL,
+	so	 	 	VARCHAR(20)	 	 NOT NULL,
+	teclado 	 	VARCHAR(30) 	 	 NOT NULL,
+	mouse 	 	 	VARCHAR(30)	 	 NOT NULL,
+	quantidade		INT			 NOT NULL,
+	preco			DOUBLE(10,2)		 NOT NULL, 
+	CONSTRAINT PK_ALUNO PRIMARY KEY (id)
+)
+
+DROP TABLE IF EXISTS infogamesuncd.smartphones;
+CREATE TABLE IF NOT EXISTS infogamesuncd.smartphones(
+	id			INT			 NOT NULL AUTO_INCREMENT,
+	cod		 	 		 INT			NOT NULL,
+	marca                VARCHAR (20)  	NOT NULL,
+	memoria         	 VARCHAR (5)	NOT NULL,
+	modelo   		 	 VARCHAR (25)	NOT NULL,
+	armazenamento   	 VARCHAR(6)	NOT NULL,
+	garantia             VARCHAR(20)	NOT NULL,
+	versaoSO	 	 VARCHAR(25)	NOT NULL,
+	quantidade	   	 	 INT			NOT NULL,
+	preco			 	 DOUBLE(10,2)	NOT NULL,
+	CONSTRAINT pk_smartphones_cod PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS infogamesuncd.consoles;
+CREATE TABLE IF NOT EXISTS infogamesuncd.consoles(
+	id			INT			 NOT NULL AUTO_INCREMENT,
+	cod  				INT	  	NOT NULL,
+	nome	 			VARCHAR(100) 	NOT NULL,
+	plataforma			VARCHAR(40)	NOT NULL,
+        fabricante		    	VARCHAR(50)	NOT NULL,
+        modelo		         	VARCHAR(30)	NOT NULL,
+	garantia			VARCHAR(10)	NOT NULL,
+	quantidade			INT		NOT NULL,
+	preco				DOUBLE(10,2)	NOT NULL,
+	CONSTRAINT pk_consoles_cod PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS infogamesuncd.games;
+CREATE TABLE IF NOT EXISTS infogamesuncd.games(
+	id			INT			 NOT NULL AUTO_INCREMENT,
+	cod  			INT		NOT NULL,
+	nome			VARCHAR(100) 	NOT NULL,
+	plataforma		VARCHAR(40)	NOT NULL,
+	garantia		VARCHAR(15)	NOT NULL,
+	quantidade		INT		NOT NULL,
+	preco			DOUBLE(10,2)    NOT NULL,
+	CONSTRAINT pk_games_cod PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS infogamesuncd.notebook;
+CREATE TABLE IF NOT EXISTS infogamesuncd.notebooK (
+	id			INT			 NOT NULL AUTO_INCREMENT,
+	cod 			INT		NOT NULL,
+	marca 			VARCHAR(30) 	NOT NULL,
+	processador 		VARCHAR(40) 	NOT NULL,
+	memoriaRam 		VARCHAR(40) 	NOT NULL,
+	armazenamento 		VARCHAR(20) 	NOT NULL,
+	tela 			VARCHAR(20) 	NOT NULL,
+	sistema 		VARCHAR(20) 	NOT NULL,
+	qtdProduto 		INT		NOT NULL,
+	preco 			DOUBLE (10,2)	NOT NULL,
+	CONSTRAINT pk_notebook_id PRIMARY KEY (id)
+);
